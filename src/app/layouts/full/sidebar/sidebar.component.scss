@@ -1,0 +1,30 @@
+.menu-card {
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center; /* Center the text */
+  }
+  
+  .menu-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items */
+  }
+  
+  .menu-icon {
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space between icon and text */
+  }
+  
+  .menu-content {
+    padding: 0; /* Remove padding if needed */
+  }
+  
+  mat-card-title,
+  mat-card-subtitle {
+    margin: 0; /* Adjust spacing if needed */
+  }

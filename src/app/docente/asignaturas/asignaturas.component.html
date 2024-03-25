@@ -1,0 +1,54 @@
+<div class="flex-wrapper">
+  <mat-card>
+    <mat-card-content class="content-flex" fxLayout="row" fxLayoutAlign="space-between">
+      <img class="imagenReducida" mat-card-image src="../../../assets/libros.png" alt="Descripción de la imagen">
+      <div>
+        <h2>Listado de asignaturas</h2>
+        <p>
+          En este panel se visualiza el listado de todas las asignaturas registradas en el sistema
+        </p>
+      </div>
+      <button mat-raised-button color="accent" class="mat-button" (click)="openAsignaturaModal()">Nueva Asignatura</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+  
+
+<div class="row">
+  <!-- The *ngFor directive is used on the column div so that each card gets its own column. -->
+  <div class="col-lg-4 col-sm-10" *ngFor="let c of asignaturas">
+    <mat-card class="oh text-center little-profile">
+      <!-- Card image -->
+      <img mat-card-image src="assets/images/background/profile-bg.jpg" alt="background" style="height: 100px; object-fit: cover;">
+      <mat-card-content>
+        <!-- Profile image -->
+        <div class="pro-img">
+          <img src="assets/images/users/4.jpg" width="100" alt="user" class="img-circle">
+          <button mat-button [matMenuTriggerFor]="menu" style="font-size: medium; text-align: right;">Acciones</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Editar</button>
+            <button mat-menu-item>Eliminar</button>
+          </mat-menu>
+        </div>
+        
+        <!-- Card title -->
+        <h3 class="m-b-0">{{ c.titulo }}</h3>
+        <!-- Card description -->
+        <h6 class="m-t-0">{{ c.descripcion }}</h6>
+        <!-- Card actions -->
+        <mat-card-actions class="db">
+          <button mat-raised-button color="primary" routerLink="/admin/cuestionarios">Cuestionarios</button>
+          <button mat-raised-button color="warn">Recursos</button>
+        </mat-card-actions>
+        <!-- Unique code section -->
+        <div class="row m-t-10">
+          <div class="col-10">
+            <h3 class="m-10 font-light">{{ c.uniqueCode }}</h3>
+            <small>Código de acceso</small>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

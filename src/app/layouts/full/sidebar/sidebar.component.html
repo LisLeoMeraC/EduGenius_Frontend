@@ -1,0 +1,40 @@
+<!-- ============================================================== -->
+<!-- sidebar -->
+<!-- ============================================================== -->
+<div class="user-profile" style="background: url(assets/images/background/user-info.jpg) no-repeat;">
+    <!-- User profile image -->
+    <div class="profile-img"> <img src="assets/images/users/profile.png" alt="user"> </div>
+    <!-- User profile text-->
+    <!-- ============================================================== -->
+    <!-- Profile - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <div class="profile-text"><a [matMenuTriggerFor]="sdprofile" class=""> Markarn Doe <i
+                class="ti-angle-down font-12 m-l-5"></i></a></div>
+    <mat-menu #sdprofile="matMenu" class="mymegamenu">
+        <button mat-menu-item>
+            <mat-icon fontIcon="settings"></mat-icon> Settings </button>
+        <button mat-menu-item>
+            <mat-icon fontIcon="account_box"></mat-icon> Profile </button>
+        <button mat-menu-item>
+            <mat-icon fontIcon="notifications_off"></mat-icon> Disable notifications </button>
+        <button mat-menu-item>
+            <mat-icon fontIcon="exit_to_app"></mat-icon> Sign Out </button>
+    </mat-menu>
+
+</div>
+<mat-nav-list appAccordion>
+    
+        <mat-card class="menu-card" routerLink="/admin/asignaturas" routerLinkActive="active-link">
+            <div class="menu-item">
+              <img src="../../../../assets/acceso.png" class="menu-icon"/> <!-- Add your icon here -->
+              <mat-card-content class="menu-content">
+                <mat-card-title>Mis asignaturas</mat-card-title>
+                <mat-card-subtitle>Genera tu organizador gráfico  </mat-card-subtitle>
+              </mat-card-content>
+            </div>
+          </mat-card>
+
+
+    
+
+</mat-nav-list>
