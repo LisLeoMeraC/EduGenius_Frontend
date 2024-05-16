@@ -22,6 +22,9 @@ import { AsignaturasComponent } from './docente/asignaturas/asignaturas.componen
 import { CuestionariosComponent } from './docente/cuestionarios/cuestionarios.component';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { AddAsignaturaComponent } from './docente/add-asignatura/add-asignatura.component';
+import { SignupComponent } from './signup/signup.component'
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { AddAsignaturaComponent } from './docente/add-asignatura/add-asignatura.
     AsignaturasComponent,
     CuestionariosComponent,
     AddAsignaturaComponent,
+    SignupComponent
     
   ],
   imports: [
@@ -44,7 +48,8 @@ import { AddAsignaturaComponent } from './docente/add-asignatura/add-asignatura.
     SharedModule,
     RouterModule.forRoot(AppRoutes),
     AppSidebarComponent,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule
   ],
   providers: [
     authInterceptorProviders

@@ -43,6 +43,7 @@ export const AppRoutes: Routes = [
   {
     path:'user-dashboard',
     component:ButtonsComponent,
+    canActivate:[AdminGuardService],
     children : [
       {
         path:'',

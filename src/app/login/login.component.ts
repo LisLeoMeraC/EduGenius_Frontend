@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { SignupComponent } from '../signup/signup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,8 @@ export class LoginComponent implements OnInit{
     "username" : '',
     "password" : ''
   }
-  constructor(private snack:MatSnackBar,private loginService:LoginService,private router:Router) { }
+  constructor(private snack:MatSnackBar,private loginService:LoginService,private router:Router, 
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -64,6 +67,20 @@ export class LoginComponent implements OnInit{
         })
       }
     )
+  }
+
+  openRegisterModal() {
+    const dialogRef = this.dialog.open(SignupComponent, {
+      width: '700px', // ajusta el ancho según tus necesidades
+      height:'600px'
+      // otras propiedades como height, data, etc.
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El modal se cerró');
+      // Vuelve a listar las asignaturas después de cerrar el modal
+     
+    });
   }
 
 }
